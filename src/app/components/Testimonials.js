@@ -46,7 +46,9 @@ export default function Testimonials() {
               
               {/* Testimonial Content */}
               <div className="space-y-6">
-                <p className="text-lg text-gray-700 italic relative z-10">"{t.text}"</p>
+              <p className="text-lg text-gray-700 italic relative z-10">
+  “{t.text}”
+</p>
                 
                 {/* Rating Stars */}
                 <div className="flex items-center justify-center space-x-1">

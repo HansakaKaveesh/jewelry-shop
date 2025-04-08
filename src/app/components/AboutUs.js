@@ -1,3 +1,5 @@
+import img from 'next/image';
+
 export default function AboutUs() {
     return (
       <section className="py-20 bg-gradient-to-b from-yellow-50 to-white">
