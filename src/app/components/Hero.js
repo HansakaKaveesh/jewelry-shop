@@ -7,14 +7,16 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <video 
-        autoPlay 
-        loop 
-        muted 
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/hero back.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  autoPlay 
+  loop 
+  muted 
+  preload="auto"
+  className="absolute top-0 left-0 w-full h-full object-cover z-0"
+>
+  <source src="/hero back.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-amber-900/60"></div>
