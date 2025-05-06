@@ -1,47 +1,41 @@
+"use client";
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterest } from 'react-icons/fa';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-    {/* Background Video */}
-    <video 
-      autoPlay 
-      loop 
-      muted 
-      className="absolute top-0 left-0 w-full h-full object-cover z-0"
-    >
-      <source src="/hero back.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+      {/* Background Video */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/hero back.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-amber-900/60"></div>
 
       {/* Animated particles background */}
-      <div className="absolute inset-0 opacity-30 animate-pulse">
-        {[...Array(20)].map((_, i) => (
-          <div 
-            key={i}
-            className="absolute w-1 h-1 bg-amber-300 rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `float ${5 + i%3}s infinite`
-            }}
-          ></div>
-        ))}
-      </div>
-
+      
       {/* Content container */}
       <div className="relative text-center px-4 max-w-6xl mx-auto">
         <div className="space-y-6 animate-fade-in-up">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-            <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent animate-gradient-shift">
-              Timeless Elegance
-            </span>
-            <br />
-            <span className="mt-2 inline-block bg-gradient-to-r from-white to-amber-50 bg-clip-text text-transparent">
-              Jewelry Collections
-            </span>
+            <TypeAnimation
+              sequence={[
+                'Timeless Elegance', 2000,
+                'Luxury Redefined', 2000,
+                'Jewelry Collections', 2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent animate-gradient-shift block"
+            />
           </h2>
           
           <div className="relative w-32 h-1 mx-auto overflow-hidden">
@@ -81,7 +75,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Social Media Icons - Vertical Left Side */}
+      {/* Social Media Icons */}
       <div className="absolute left-8 bottom-1/3 hidden md:flex flex-col gap-6">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="group">
           <FaFacebookF className="text-white hover:text-amber-500 transition-all duration-300 w-5 h-5 group-hover:scale-125" />
@@ -97,7 +91,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Enhanced Scroll indicator */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 group">
         <div className="flex flex-col items-center space-y-2 animate-bounce">
           <div className="w-8 h-8 rounded-full border-2 border-amber-200 flex items-center justify-center">
@@ -121,7 +115,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating jewelry elements */}
+      {/* Floating element */}
       <div className="absolute top-20 right-8 animate-float">
         <div className="w-16 h-16 bg-amber-500/20 rounded-full backdrop-blur-sm"></div>
       </div>

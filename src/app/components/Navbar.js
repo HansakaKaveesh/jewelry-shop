@@ -48,7 +48,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {['/', '/shop', '/about', '/contact'].map((path) => (
+            {['/', '/Shop', '/About', '/Gallary', '/Contact'].map((path) => (
               <Link 
                 key={path}
                 href={path} 
@@ -106,7 +106,7 @@ export default function Navbar() {
               ? 'bg-white/95' 
               : 'bg-white/80'
           } backdrop-blur-sm`}>
-            {['/', '/shop', '/about', '/contact'].map((path) => (
+            {['/', '/Shop', '/About', '/Gallary', '/Contact'].map((path) => (
               <Link 
                 key={path}
                 href={path} 

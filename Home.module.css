@@ -1,0 +1,58 @@
+/* Background container */
+.backgroundContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+  
+  /* Background layers */
+  .backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .backgroundLayer.active {
+    opacity: 1;
+  }
+  
+  /* Content styles */
+  .content {
+    position: relative;
+    min-height: 400vh; /* Creates scroll space */
+    padding: 2rem;
+  }
+  
+  .section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 1rem;
+      margin: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

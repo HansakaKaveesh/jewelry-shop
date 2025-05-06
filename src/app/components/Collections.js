@@ -1,3 +1,8 @@
+"use client";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default function Collections() {
   const categories = [
     {
@@ -20,26 +25,35 @@ export default function Collections() {
     },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration
+      easing: 'ease-in-out', // Set animation easing
+      once: true, // Trigger animation once
+    });
+  }, []);
+
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-10 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             <span className="bg-gradient-to-r from-yellow-600 to-yellow-700 bg-clip-text text-transparent">
               Our Collections
             </span>
           </h2>
-          <p className="text-lg text-gray-600">Discover exquisite craftsmanship in every piece</p>
+          <p className="text-base text-gray-600">Discover exquisite craftsmanship in every piece</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8">
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              data-aos="fade-up" // Add your animation here
             >
-              {/* Image section with fixed aspect ratio */}
-              <div className="relative aspect-[4/5]">
+              {/* Image section with smaller aspect ratio */}
+              <div className="relative aspect-[4/3]">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -50,15 +64,15 @@ export default function Collections() {
               </div>
 
               {/* Text overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="transform group-hover:-translate-y-2 transition-transform duration-300">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 truncate">{cat.name}</h3>
-                  <p className="text-sm md:text-base text-gray-200 mb-3 line-clamp-2">{cat.description}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
+                  <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{cat.name}</h3>
+                  <p className="text-xs md:text-sm text-gray-200 mb-2 line-clamp-2">{cat.description}</p>
 
-                  {/* Button: always visible on mobile, fades in on hover for desktop */}
+                  {/* Button row */}
                   <div className="flex items-center justify-between transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
-                    <span className="text-sm font-medium">{cat.items}</span>
-                    <button className="bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200">
+                    <span className="text-xs font-medium">{cat.items}</span>
+                    <button className="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded-full text-xs font-medium transition-colors duration-200">
                       Explore
                     </button>
                   </div>

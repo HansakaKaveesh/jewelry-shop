@@ -1,3 +1,9 @@
+"use client"; // if you're using Next.js with app router
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const testimonials = [
   {
     name: "Amanda",
@@ -23,10 +29,14 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-to-b from-yellow-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-down">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             <span className="bg-gradient-to-r from-yellow-600 to-yellow-700 bg-clip-text text-transparent">
               Voices of Delight
@@ -39,23 +49,23 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <div
               key={index}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               className="relative bg-white rounded-2xl shadow-xl hover:shadow-2xl p-8 transition-all duration-300 group"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 left-6 text-yellow-200 text-4xl">“</div>
-              
+
               {/* Testimonial Content */}
               <div className="space-y-6">
-              <p className="text-lg text-gray-700 italic relative z-10">
-  “{t.text}”
-</p>
-                
+                <p className="text-lg text-gray-700 italic relative z-10">“{t.text}”</p>
+
                 {/* Rating Stars */}
                 <div className="flex items-center justify-center space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-6 h-6 ${i < t.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                      className={`w-6 h-6 ${i < t.rating ? "text-yellow-400" : "text-gray-300"}`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -66,9 +76,9 @@ export default function Testimonials() {
 
                 {/* User Info */}
                 <div className="flex items-center justify-center space-x-4">
-                  <img 
-                    src={t.avatar} 
-                    alt={t.name} 
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-yellow-200"
                   />
                   <div>
