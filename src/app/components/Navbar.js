@@ -26,9 +26,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    <nav className={`font-serif fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+        ? 'bg-white/60 backdrop-blur-lg shadow-lg' 
         : 'bg-white/0 backdrop-blur-none shadow-none'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -48,24 +48,25 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {['/', '/Shop', '/About', '/Gallary', '/Contact'].map((path) => (
-              <Link 
-                key={path}
-                href={path} 
-                className={`${
-                  pathname === path 
-                    ? 'text-amber-700' 
-                    : `text-gray-600/90 ${isScrolled ? 'hover:text-amber-700' : 'hover:text-amber-600/90'}`
-                } transition-colors duration-200 font-medium relative group`}
-              >
-                {path.split('/')[1] || 'Home'}
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all group-hover:w-full ${
-                  isScrolled ? 'bg-amber-700' : 'bg-amber-600/80'
-                }`}></span>
-              </Link>
-            ))}
-          </div>
-
+      {['/', '/Shop', '/About', '/Gallary', '/Contact'].map((path) => (
+        <Link 
+          key={path}
+          href={path}
+          className={`transition-colors duration-200 font-medium relative group ${
+            pathname === path
+              ? 'text-amber-700'
+              : isScrolled
+                ? 'text-gray-600 hover:text-amber-700'
+                : 'text-white hover:text-amber-600'
+          }`}
+        >
+          {path.split('/')[1] || 'Home'}
+          <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all group-hover:w-full ${
+            isScrolled ? 'bg-amber-700' : 'bg-amber-600/80'
+          }`}></span>
+        </Link>
+      ))}
+    </div>
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
