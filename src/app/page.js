@@ -11,8 +11,6 @@ import ScrollProgress from "./components/ScrollProgress"; // ← new import
 export default function Home() {
   return (
     <div>
-      
-      
       <ScrollProgress /> {/* ← scroll indicator */}
       <Hero />
       <AboutUs />
@@ -20,7 +18,6 @@ export default function Home() {
       <PopularItems />
       <StickyImages />
       <Testimonials />
-      <Footer />
     </div>
   );
 }

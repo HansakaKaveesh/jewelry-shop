@@ -179,23 +179,18 @@ export default function ShopPage() {
 
   {/* Content */}
   <div className="relative z-10 max-w-4xl mx-auto text-center p-8 backdrop-blur-sm bg-white/10 rounded-xl shadow-lg">
-    <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6">
       Welcome to Our Shop
     </h1>
     <p className="text-lg md:text-xl text-gray-200 mb-8">
       Discover the best products at unbeatable prices. Style meets comfort right here.
     </p>
-    <a
-      href="#shop"
-      className="inline-block bg-white text-black px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 hover:scale-105 transform transition duration-300"
-    >
-      Shop Now
-    </a>
+   
   </div>
 </section>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4 md:px-20 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4 md:px-20 mt-20 mb-20">
 {/* Sidebar */}
 <aside className="col-span-1 space-y-6 bg-white p-4 rounded-xl shadow-md">
   {/* Search Bar */}
