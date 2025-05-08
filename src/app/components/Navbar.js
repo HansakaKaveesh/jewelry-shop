@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link 
               href="/" 
               className={`text-2xl font-bold transition-colors duration-200 flex items-center ${
-                isScrolled ? 'text-amber-700' : 'text-amber-600/90'
+                isScrolled ? 'text-amber-800' : 'text-white'
               } hover:text-amber-800`}
             >
               <span className="mr-2">💎</span>
