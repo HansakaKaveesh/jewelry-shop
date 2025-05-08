@@ -73,8 +73,8 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-amber-700' 
-                  : 'text-gray-600/90 hover:text-amber-600/90'
+                  ? 'text-gray-900 hover:text-amber-700' 
+                  : 'text-gray-100 hover:text-amber-600/90'
               } hover:bg-gray-100/30 focus:outline-none focus:ring-2 focus:ring-amber-500/80`}
               aria-label="Toggle menu"
             >
