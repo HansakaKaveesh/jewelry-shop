@@ -308,8 +308,8 @@ export default function ShopPage() {
           <p className="text-xl font-bold text-blue-600 mt-2">${product.numericPrice.toFixed(2)}</p>
 
           <div className="flex items-center justify-between mt-auto pt-4">
-            <button className="text-blue-500 hover:underline text-sm">Quick View</button>
-            <button className="text-gray-500 hover:text-yellow-500 text-sm">Add to Wishlist</button>
+            <button className="text-blue-500 hover:underline text-sm cursor-pointer">Quick View</button>
+            <button className="text-gray-500 hover:text-yellow-500 text-sm cursor-pointer">Add to Wishlist</button>
           </div>
         </div>
       ))}

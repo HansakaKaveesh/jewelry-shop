@@ -53,9 +53,9 @@ export default function Hero() {
               className="relative bg-gradient-to-br from-amber-600 to-amber-800 px-8 py-3 rounded-full text-white 
                          transform transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-amber-500/30
                          focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2
-                         group"
+                         group cursor-pointer"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-2 ">
                 <span>Shop Collection</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -66,7 +66,7 @@ export default function Hero() {
               className="border-2 border-amber-200 px-8 py-3 rounded-full bg-white/5 backdrop-blur-sm
                          hover:bg-white/20 transform transition-all duration-300 hover:scale-105
                          focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
-                         shadow-lg flex items-center gap-2"
+                         shadow-lg flex items-center gap-2 cursor-pointer"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

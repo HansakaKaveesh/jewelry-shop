@@ -98,7 +98,7 @@ export default function AboutUs() {
             </p>
 
             <button 
-              className="mt-6 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white px-8 py-3 rounded-full hover:from-yellow-700 hover:to-yellow-800 transition-all duration-300"
+              className="mt-6 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white px-8 py-3 rounded-full hover:from-yellow-700 hover:to-yellow-800 transition-all duration-300 cursor-pointer"
               data-aos="fade-up" 
               data-aos-delay="400"
             >
